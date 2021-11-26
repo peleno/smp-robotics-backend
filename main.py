@@ -1,4 +1,5 @@
 import flask
+import os
 from flask import Flask, json, request
 # from flask_mysqldb import MySQL
 from flask_cors import CORS
@@ -45,5 +46,5 @@ def sensors_data_records_handler(robot_id):
     return sensors_data_controller(request)
 
 
-# if __name__ == '__main__':
-#     app.run(host='0.0.0.0', port=8081, debug=True)
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', debug=True, port=int(os.environ.get("PORT", 8080)))
