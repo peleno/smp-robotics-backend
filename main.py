@@ -5,6 +5,7 @@ from flask_cors import CORS
 # from cloud_functions_robot_controller import get_all_robots
 from cloud_functions.get_all_robots import get_all_robots
 from cloud_functions.robot_controller import robot_controller
+from cloud_functions.sensors_data_controller import sensors_data_controller
 
 app = Flask(__name__)
 CORS(app)
@@ -39,5 +40,10 @@ def robot_controller_handler():
     return robot_controller(request)
 
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8081, debug=True)
+@app.route('/robot/<robot_id>/monitor')
+def sensors_data_records_handler(robot_id):
+    return sensors_data_controller(request)
+
+
+# if __name__ == '__main__':
+#     app.run(host='0.0.0.0', port=8081, debug=True)

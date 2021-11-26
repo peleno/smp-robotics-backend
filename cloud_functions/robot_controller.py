@@ -1,5 +1,5 @@
-from db_access import select_all_robots, create_robot
-from robot import RobotSchema
+from db_access.robot_repository import select_all_robots, create_robot
+from model.robot import RobotSchema
 import json
 from flask import Response
 

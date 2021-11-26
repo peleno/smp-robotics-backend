@@ -1,0 +1,5 @@
+SQLAlchemy==1.4.27
+# If your database is MySQL, uncomment the following line:
+PyMySQL==1.0.2
+marshmallow==3.14.0
+Flask==2.0.2
