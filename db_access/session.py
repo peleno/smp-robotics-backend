@@ -32,5 +32,3 @@ def get_session():
     )
     session = Session(bind=engine)
     return session
-
-
